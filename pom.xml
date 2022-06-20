@@ -5,6 +5,7 @@
 	<version>0.0.1-SNAPSHOT</version>
 	<packaging>pom</packaging>
 	<modules>
+		<module>simple-Springboot-core</module>
 		<module>simple-Springboot-Vaadin</module>
 	</modules>
 </project>
