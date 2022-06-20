@@ -1,2 +1,5 @@
 .*
 target/
+node_modules
+generated
+webpack.generated.js
