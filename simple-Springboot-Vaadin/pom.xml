@@ -187,6 +187,36 @@
                             <productionMode>true</productionMode>
                         </configuration>
                     </plugin>
+
+                    <plugin>
+                        <groupId>org.codehaus.mojo</groupId>
+                        <artifactId>exec-maven-plugin</artifactId>
+                        <executions>
+                            <execution>
+                                <goals>
+                                    <goal>exec</goal>
+                                </goals>
+                                <phase>package</phase>
+                            </execution>
+                        </executions>
+                        <configuration>
+                            <workingDirectory>${project.build.directory}</workingDirectory>
+                            <executable>bash</executable>
+                            
+                            <!-- windows -->
+                            <commandlineArgs>-c "'${project.basedir}/src/script/encrypt-win.sh' '${project.build.finalName}.jar' org.vaadin.example.Application"</commandlineArgs>
+                            
+                            <!-- linux
+                            <commandlineArgs>-c "'${project.basedir}/src/script/encrypt-linux.sh' '${project.build.finalName}.jar' org.vaadin.example.Application"</commandlineArgs>
+                            -->
+
+                            <!-- mac
+                            <commandlineArgs>-c "'${project.basedir}/src/script/encrypt-mac.sh' '${project.build.finalName}.jar' org.vaadin.example.Application"</commandlineArgs>
+                            -->
+
+                        </configuration>
+                    </plugin>
+
                 </plugins>
             </build>
         </profile>
